@@ -1,0 +1,7 @@
+.header_page{
+    background: #fff;
+    height: 100%;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+}
