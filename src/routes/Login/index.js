@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox, Divider } from 'antd';
-
+import fetch from 'fetch'
+import axios from 'axios'
 import './style.css'
 import "antd/dist/antd.css";
 
@@ -16,18 +17,30 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
-              if(values.username=='admin'&&values.password=='123'){
-                  const userInfo = {
-                      username:values.username,
-                      password:values.password
-                  }
-                sessionStorage.setItem("isLogin","1");
-                sessionStorage.setItem('userInfo',JSON.stringify(userInfo));
-                this.props.history.push('/');
-              } else {
-                  alert('请输入正确的用户名和密码');
-                  return;
-              }
+            // axios.get('/api/todos')
+            // .then(function (response) {
+            //     console.log(response);
+            // })
+            // .catch(function (error) {
+            //     console.log(error);
+            // });
+            fetch('api/todos')
+            .then(res => res.json())
+            .then(res => {
+              console.log(res)
+            })
+            //   if(values.username=='admin'&&values.password=='123'){
+            //       const userInfo = {
+            //           username:values.username,
+            //           password:values.password
+            //       }
+            //     sessionStorage.setItem("isLogin","1");
+            //     sessionStorage.setItem('userInfo',JSON.stringify(userInfo));
+            //     this.props.history.push('/');
+            //   } else {
+            //       alert('请输入正确的用户名和密码');
+            //       return;
+            //   }
             
           } else{
               console.log('err')
@@ -36,7 +49,6 @@ class Login extends React.Component {
       };
     render() {
         const { getFieldDecorator } = this.props.form;
-        console.log(this.props);
         return (
            <div id="components-form-demo-normal-login">
                 <Form onSubmit={this.handleSubmit.bind(this)} className="login-form">

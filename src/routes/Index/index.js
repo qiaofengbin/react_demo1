@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Layout } from 'antd';
 import MenuLeft from '../../components/MenuLeft'
 import HeaderBar from '../../components/HeaderBar'
+import ContentMain from '../../components/ContentMain'
 const { Header, Footer, Sider, Content } = Layout;
 
 class Index extends Component {
@@ -19,7 +20,7 @@ class Index extends Component {
         return (
             <div style={{width:'100%',height:'100%'}}>
                 <Layout style={{width:'100%',height:'100%'}}>
-                    <Sider ollapsible
+                    <Sider ollapsible = "true"
                             trigger={null}
                             collapsed={this.state.collapsed}>
                         <MenuLeft />
@@ -28,7 +29,9 @@ class Index extends Component {
                         <Header style={{padding:'0'}}>
                             <HeaderBar collapsed={this.state.collapsed} onToggle={this.toggle}/>
                         </Header>
-                        <Content style={{flex:'1'}}>Content</Content>
+                        <Content style={{flex:'1'}}>
+                            <ContentMain />
+                        </Content>
                     </Layout>
                 </Layout>
             </div>

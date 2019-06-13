@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Icon, Button, Dropdown } from 'antd';
-import screenfull from 'screenfull'
+import screenfull from 'screenfull' // 可以切换全屏
 import './style.css'
 
 const { SubMenu } = Menu;
