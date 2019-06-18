@@ -7,6 +7,7 @@ const Home = LoadableComponent(()=>import('../../routes/Home/index')) //参数�
 
 // 基本组件
 const ButtonDemo = LoadableComponent(()=>import('../../routes/General/ButtonDemo/index'))
+const IconDemo = LoadableComponent(()=>import('../../routes/General/IconDemo/index'))
 
 // 导航组件
 const DropdownDemo = LoadableComponent(()=>import('../../routes/Navigation/DropdownDemo/index'))
@@ -26,6 +27,7 @@ class ContentMain extends Component{
                     <AuthRouter exact path="/home" component={Home}/>
 
                     <AuthRouter exact path="/home/general/button" component={ButtonDemo}/>
+                    <AuthRouter exact path="/home/general/icon" component={IconDemo}/>
 
                     <AuthRouter exact path="/home/navigation/dropdown" component={DropdownDemo}/>
                     <AuthRouter exact path="/home/navigation/menu" component={MenuDemo}/>
@@ -40,4 +42,4 @@ class ContentMain extends Component{
         )
     }
 }
-export default ContentMain;
+export default withRouter(ContentMain);

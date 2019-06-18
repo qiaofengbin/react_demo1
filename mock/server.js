@@ -13,10 +13,9 @@ router.get('/', function (ctx, next) {
 router.prefix('/api');
 
 // 模拟json数据
-var todo = require('./todo.js')
-router.get('/todos', function (ctx, next) {
-  console.log('--todo--')
-  ctx.body = todo
+var loginInfo = require('./data/loginUser.js')
+router.get('/login', function (ctx, next) {
+  ctx.body = loginInfo
 });
 
 // 开始服务并生成路由

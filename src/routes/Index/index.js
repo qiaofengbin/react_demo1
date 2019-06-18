@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import MenuLeft from '../../components/MenuLeft'
 import HeaderBar from '../../components/HeaderBar'
 import ContentMain from '../../components/ContentMain'
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 class Index extends Component {
     state = {
